@@ -1,0 +1,60 @@
+<?php
+
+include "db.php";
+
+$res = $conn
+-
+>query("SELECT * FROM products");
+
+?>
+
+<!DOCTYPE html>
+
+<html>
+
+<head><meta charset="utf
+-
+8"><title>SecureShop</title></head>
+TP0 SecureShop | Page
+ 
+10
+
+<body>
+
+<h1>SecureShop</h1>
+
+<form action="search.php" method="get">
+
+<input type="text" name="q" placeholder="Rechercher...">
+
+<button type="submit">Rechercher</button>
+
+</form>
+
+<table border="1" cellpadding="6">
+
+<tr><th>Nom</th><th>Description</th><th>Prix</th><th>Stock</th></tr>
+
+<?php while ($p = $res
+-
+>fetch_assoc()) { ?>
+
+<tr>
+
+<td><?php echo $p['name']; ?></td>
+
+<td><?php echo $p['description']; ?></td>
+
+<td><?php echo $p['price']; ?> €</td>
+
+<td><?php echo $p['stock']; ?></td>
+
+</tr>
+
+<?php } ?>
+
+</table>
+
+</body>
+
+</html>

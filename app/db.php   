@@ -1,0 +1,5 @@
+<?php
+
+$conn = new mysqli("db", "root", "root", "secureshop");
+
+$conn->set_charset("utf8mb4");
